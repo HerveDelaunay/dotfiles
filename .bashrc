@@ -10,8 +10,7 @@ export PATH=$PATH:/opt/homebrew/bin
 # PS1='[\u@\h \W]\$ '
 
 # Set to superior editing mode
-# doesn't work on Alacritty
-#set -o vi
+set -o vi
 
 # keybinds
 bind -x '"\C-l":clear'
