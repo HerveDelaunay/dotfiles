@@ -93,6 +93,7 @@ alias c="clear"
 #alias rob='cd $REPOS/github.com/rwxrob'
 alias homelab='cd $REPOS/github.com/HerveDelaunay/homelab/'
 #alias hl='homelab'
+alias conf='cd $XDG_CONFIG_HOME'
 
 # ls
 alias ls='ls --color=auto'
@@ -126,9 +127,9 @@ alias in="cd \$SECOND_BRAIN/0 Inbox/"
 alias fishies=asciiquarium
 
 # kubectl
-alias k='kubectl'
-source <(kubectl completion bash)
-complete -o default -F __start_kubectl k
-alias kgp='kubectl get pods'
-alias kc='kubectx'
-alias kn='kubens'
+# alias k='kubectl'
+# source <(kubectl completion bash)
+# complete -o default -F __start_kubectl k
+# alias kgp='kubectl get pods'
+# alias kc='kubectx'
+# alias kn='kubens'
