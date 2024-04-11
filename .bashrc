@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:/opt/homebrew/bin:/$HOME/Desktop/Datascientest/
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -28,6 +28,7 @@ export DOTFILES="$GHREPOS/dotfiles"
 export LAB="$GHREPOS/lab"
 export SCRIPTS="$DOTFILES/scripts"
 export SECOND_BRAIN="$HOME/second-brain"
+export DATASCIENTEST="$HOME/Desktop/Datascientest/"
 
 # https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path
 # PATH="${PATH:+${PATH}:}~/opt/bin"   # appending
@@ -94,6 +95,7 @@ alias c="clear"
 alias homelab='cd $REPOS/github.com/HerveDelaunay/homelab/'
 #alias hl='homelab'
 alias conf='cd $XDG_CONFIG_HOME'
+alias data='cd $HOME/Desktop/Datascientest/'
 
 # ls
 alias ls='ls --color=auto'
