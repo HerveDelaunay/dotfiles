@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-export PATH=$PATH:/opt/homebrew/bin:/$HOME/Desktop/Datascientest/
+export PATH=$PATH:/opt/homebrew/bin:/$HOME/Desktop/Datascientest/:/$LAB/bash/
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -30,6 +30,11 @@ export SCRIPTS="$DOTFILES/scripts"
 export SECOND_BRAIN="$HOME/second-brain"
 export DATASCIENTEST="$HOME/Desktop/Datascientest/"
 
+# Golang environment variables
+export GOROOT=$(brew --prefix go)/libexec
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
+
 # https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path
 # PATH="${PATH:+${PATH}:}~/opt/bin"   # appending
 # PATH="~/opt/bin${PATH:+:${PATH}}"   # prepending
@@ -52,24 +57,24 @@ export HISTCONTROL=ignorespace
 # This function is stolen from rwxrob
 
 clone() {
-	local repo="$1" user
-	local repo="${repo#https://github.com/}"
-	local repo="${repo#git@github.com:}"
-	if [[ $repo =~ / ]]; then
-		user="${repo%%/*}"
-	else
-		user="$GITUSER"
-		[[ -z "$user" ]] && user="$USER"
-	fi
-	local name="${repo##*/}"
-	local userd="$REPOS/github.com/$user"
-	local path="$userd/$name"
-	[[ -d "$path" ]] && cd "$path" && return
-	mkdir -p "$userd"
-	cd "$userd"
-	echo gh repo clone "$user/$name" -- --recurse-submodule
-	gh repo clone "$user/$name" -- --recurse-submodule
-	cd "$name"
+  local repo="$1" user
+  local repo="${repo#https://github.com/}"
+  local repo="${repo#git@github.com:}"
+  if [[ $repo =~ / ]]; then
+    user="${repo%%/*}"
+  else
+    user="$GITUSER"
+    [[ -z "$user" ]] && user="$USER"
+  fi
+  local name="${repo##*/}"
+  local userd="$REPOS/github.com/$user"
+  local path="$userd/$name"
+  [[ -d "$path" ]] && cd "$path" && return
+  mkdir -p "$userd"
+  cd "$userd"
+  echo gh repo clone "$user/$name" -- --recurse-submodule
+  gh repo clone "$user/$name" -- --recurse-submodule
+  cd "$name"
 } && export -f clone
 
 # ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -129,9 +134,36 @@ alias in="cd \$SECOND_BRAIN/0 Inbox/"
 alias fishies=asciiquarium
 
 # kubectl
-# alias k='kubectl'
-# source <(kubectl completion bash)
-# complete -o default -F __start_kubectl k
-# alias kgp='kubectl get pods'
-# alias kc='kubectx'
-# alias kn='kubens'
+#
+# run only if kubectl exists
+if command -v kubectl >/dev/null 2>&1; then
+  source <(kubectl completion bash)
+  alias k=kubectl
+  complete -o default -o nospace -F __start_kubectl k
+fi
+#
+alias kgp='kubectl get pods'
+alias kc='kubectx'
+alias kn='kubens'
+
+# ~~~~~~~~~~~~~~~ Fabric ~~~~~~~~~~~~~~~~~~~~~~~~
+# Loop through all files in the ~/.config/fabric/patterns directory
+for pattern_file in $HOME/.config/fabric/patterns/*; do
+  # Get the base name of the file (i.e., remove the directory path)
+  pattern_name=$(basename "$pattern_file")
+
+  # Create an alias in the form: alias pattern_name="fabric --pattern pattern_name"
+  alias_command="alias $pattern_name='fabric --pattern $pattern_name'"
+
+  # Evaluate the alias command to add it to the current shell
+  eval "$alias_command"
+done
+
+yt() {
+  local video_link="$1"
+  fabric -y "$video_link" --transcript
+}
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/herve/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
