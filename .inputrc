@@ -1,6 +1,1 @@
 set show-mode-in-prompt on
-
-# if running WSL disable annoying bell sound
-if [ $(uname -r | sed -n 's/.*\( *Microsoft *\).*/\1/ip') ]; then
-  set bell-style none
-fi
