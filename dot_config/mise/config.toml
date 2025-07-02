@@ -4,4 +4,6 @@ bat = "latest"
 lsd = "latest"
 ripgrep = "latest"
 fzf = "latest"
+neovim = "latest"
+node = "latest"
 
