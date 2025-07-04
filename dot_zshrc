@@ -36,6 +36,14 @@ fi
 
 export LANG="en_US.UTF-8"
 
+# directories
+export REPOS="$HOME/repos"
+export GITUSER="HerveDelaunay"
+export GHREPOS="$REPOS/github.com/$GITUSER"
+export DOTFILES="$GHREPOS/dotfiles"
+export HOMELAB="$GHREPOS/homelab"
+export SECOND_BRAIN="$HOME/second-brain"
+
 
 # ~~~~~~~~~~~~~~~ Mise ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -50,17 +58,21 @@ fi
 
 autoload -Uz compinit && compinit
 
-#if command -v fzf > /dev/null ; then
-#  source <(fzf --zsh)
-#fi
+if command -v fzf > /dev/null ; then
+ source <(fzf --zsh)
+fi
 
 if command -v flux > /dev/null ; then
   source <(flux completion zsh)
 fi
 
-
 if command -v mise > /dev/null ; then
   source <(mise completion zsh)
+fi
+
+if command -v kubectl > /dev/null ; then
+  source <(kubectl completion zsh)
+  complete -o default -F __start_kubectl k
 fi
 
 
@@ -68,8 +80,15 @@ fi
 
 
 alias v=nvim
+alias vim=nvim
 alias gp="git pull"
 alias lg=lazygit
+
+# kubectl
+alias k=kubectl
+alias kgp='kubectl get pods'
+alias kc='kubectx'
+alias kn='kubens'
 
 if command -v bat > /dev/null ; then
   alias cat="bat"
@@ -83,3 +102,12 @@ if command -v lsd > /dev/null ; then
   alias lt='ls --tree'
 fi
 
+# cd
+alias blog="cd ~/websites/blog"
+alias cdpblog='cd $SECOND_BRAIN/2-areas/blog/content'
+alias homelab='cd $HOMELAB'
+alias hl='homelab'
+alias dot='cd $HOME/.local/share/chezmoi'
+alias repos='cd $REPOS'
+alias hr='cd $GHREPOS'
+alias conf='cd $XDG_CONFIG_HOME'

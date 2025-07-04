@@ -2,8 +2,10 @@
 
 set -euo pipefail
 
+XDG_CONFIG_HOME="$HOME/.config"
+
 if command -v zsh >/dev/null; then
-    sudo chsh -s $(command -v zsh) $USER
+  sudo chsh -s $(command -v zsh) $USER
 fi
 
 if [ ! -d "$HOME/.zsh" ]; then
@@ -16,7 +18,12 @@ if [ ! -d "$HOME/.zsh/pure" ]; then
 fi
 
 if ! command -v chezmoi >/dev/null; then
-    sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:HerveDelaunay/dotfiles.git
+  sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:HerveDelaunay/dotfiles.git
+fi
+
+if command -v alacritty >/dev/null; then
+  mkdir -p "$XDG_CONFIG_HOME"/alacritty/themes
+  git clone https://github.com/alacritty/alacritty-theme "$XDG_CONFIG_HOME"/alacritty/themes
 fi
 
 exit 0

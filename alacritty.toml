@@ -1,9 +1,5 @@
 # themes from https://github.com/alacritty/alacritty-theme
-
-# import = ["/Users/herve/.config/alacritty/themes/themes/gruvbox_dark.toml"]
-#import = ["~/.config/alacritty/themes/themes/catppuccin.toml"]
 import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
-
 
 [font]
 size = 17
