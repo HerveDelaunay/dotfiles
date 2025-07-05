@@ -1,3 +1,18 @@
 #!/bin/bash
 # packages hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
-$HOME/.local/bin/mise trust $HOME/.config/mise/config.toml && $HOME/.local/bin/mise install
+
+{{ if eq .chezmoi.os "darwin" -}}
+# --- macOS ---
+MISERUN="$(command -v mise)"
+{{- else -}}
+# --- Linux / WSL ---
+MISERUN="$HOME/.local/bin/mise"
+{{- end }}
+
+# sécurité : si rien trouvé, on sort proprement
+if [ -z "$MISERUN" ] || [ ! -x "$MISERUN" ]; then
+  echo "mise not found ; skip."
+  exit 0
+fi
+
+"$MISERUN" trust "$HOME/.config/mise/config.toml" && "$MISERUN" install
