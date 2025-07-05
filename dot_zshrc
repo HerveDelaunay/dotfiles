@@ -49,8 +49,12 @@ export SECOND_BRAIN="$HOME/second-brain"
 
 
 if command -v mise > /dev/null ; then
-  eval "$($HOME/.local/bin/mise activate zsh)"
+  MISERUN="$(command -v mise)"
+  eval "$MISERUN activate zsh"
 fi
+# if command -v mise > /dev/null ; then
+#   eval "$($HOME/.local/bin/mise activate zsh)"
+# fi
 
 
 # ~~~~~~~~~~~~~~~ Completion ~~~~~~~~~~~~~~~~~~~~~~~~
