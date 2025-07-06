@@ -11,7 +11,11 @@ SAVEHIST=100000
 
 PURE_GIT_PULL=0
 
-fpath+=($HOME/.zsh/pure)
+if [[ "$OSTYPE" == "darwin*" ]]; then
+  fpath=("$(brew --prefix)/share/zsh/site-functions" "$HOME/.zsh/pure" fpath)
+else
+  fpath+=($HOME/.zsh/pure)
+fi
 
 autoload -U promptinit; promptinit
 
