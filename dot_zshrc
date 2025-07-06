@@ -11,11 +11,8 @@ SAVEHIST=100000
 
 PURE_GIT_PULL=0
 
-if [[ "$OSTYPE" == darwin* ]]; then
-  fpath+=("$(brew --prefix)/share/zsh/site-functions")
-else
-  fpath+=($HOME/.zsh/pure)
-fi
+fpath+=($HOME/.zsh/pure)
+
 autoload -U promptinit; promptinit
 
 prompt pure
@@ -50,7 +47,7 @@ export SECOND_BRAIN="$HOME/second-brain"
 
 if command -v mise > /dev/null ; then
   MISERUN="$(command -v mise)"
-  eval "$MISERUN activate zsh"
+  eval "$($MISERUN activate zsh)"
 fi
 # if command -v mise > /dev/null ; then
 #   eval "$($HOME/.local/bin/mise activate zsh)"
