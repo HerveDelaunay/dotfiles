@@ -87,6 +87,7 @@ alias v=nvim
 alias vim=nvim
 alias gp="git pull"
 alias lg=lazygit
+alias t="tmux"
 
 # kubectl
 alias k=kubectl
