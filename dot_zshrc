@@ -79,6 +79,9 @@ if command -v kubectl > /dev/null ; then
   source <(kubectl completion zsh)
 fi
 
+if command -v devpod > /dev/null ; then
+  source <(devpod completion zsh)
+fi
 
 # ~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~~~~~~~~~~
 
