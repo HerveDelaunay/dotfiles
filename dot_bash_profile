@@ -17,10 +17,8 @@ if [ -r ~/.bashrc ]; then
 fi
 
 # source bash completion
-[[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+fi
 
 export XDG_CONFIG_HOME="$HOME"/.config
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/herve/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

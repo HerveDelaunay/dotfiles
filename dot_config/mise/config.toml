@@ -2,9 +2,9 @@
 chezmoi = "latest"
 bat = "latest"
 lsd = "latest"
-ripgrep = "latest"
-fzf = "latest"
-fd = "latest"      # required for lazyvim file search
+#ripgrep = "latest"
+#fzf = "latest"
+fd = "latest"     # required for lazyvim file search
 neovim = "latest"
-node = "latest"    # required for lazyvim
-usage = "latest"   # required for mise completion
+node = "latest"   # required for lazyvim
+usage = "latest"  # required for mise completion
