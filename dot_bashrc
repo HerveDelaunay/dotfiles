@@ -42,19 +42,19 @@ fi
 # ~~~~~~~~~~~~~~~ Completion ~~~~~~~~~~~~~~~~~~~~~~~~
 
 if command -v flux >/dev/null; then
-  source <(flux completion zsh)
+  source <(flux completion bash)
 fi
 
 if command -v mise >/dev/null; then
-  source <(mise completion zsh)
+  source <(mise completion bash)
 fi
 
 if command -v kubectl >/dev/null; then
-  source <(kubectl completion zsh)
+  source <(kubectl completion bash)
 fi
 
 if command -v devpod >/dev/null; then
-  source <(devpod completion zsh)
+  source <(devpod completion bash)
 fi
 
 # ~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~~~~~~~~~~
