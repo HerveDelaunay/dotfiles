@@ -2,6 +2,8 @@
 [[ $- != *i* ]] && return
 #
 
+export PATH=$PATH:~/.local/bin
+
 # Set to superior editing mode
 set -o vi
 
