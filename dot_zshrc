@@ -119,3 +119,5 @@ alias dot='cd $HOME/.local/share/chezmoi'
 alias repos='cd $REPOS'
 alias hr='cd $GHREPOS'
 alias conf='cd $XDG_CONFIG_HOME'
+
+export PATH=$PATH:$HOME/go/bin

@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-export PATH=$PATH:/opt/homebrew/bin:/$HOME/Desktop/Datascientest/:/$LAB/bash/
+export PATH=$PATH:/opt/homebrew/bin:/$HOME/Desktop/Datascientest/:/$LAB/bash/:$HOME/go/bin
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
