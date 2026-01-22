@@ -17,6 +17,11 @@ XDG_CONFIG_HOME="$HOME/.config"
 #  git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 #fi
 
+## Check if pure is already installed
+if ! command -v starship; then
+  curl -sS https://starship.rs/install.sh | sh
+fi
+
 if ! command -v chezmoi >/dev/null; then
   sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:HerveDelaunay/dotfiles.git
 fi

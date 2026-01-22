@@ -17,6 +17,10 @@ export HISTSIZE=100000
 export SAVEHIST=100000
 export HISTCONTROL=ignorespace
 
+# ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~~~~~~~~~~
+
+eval "$(starship init bash)"
+
 # ~~~~~~~~~~~~~~~ Environment Variables ~~~~~~~~~~~~~~~~~~~~~~~~
 
 if command -v nvim >/dev/null; then
