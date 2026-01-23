@@ -23,7 +23,7 @@ XDG_CONFIG_HOME="$HOME/.config"
 #fi
 
 if ! command -v chezmoi >/dev/null; then
-  sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:HerveDelaunay/dotfiles.git
+  sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://github.com/HerveDelaunay/dotfiles.git
 fi
 
 if command -v alacritty >/dev/null; then
