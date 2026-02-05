@@ -99,7 +99,7 @@ alias repos='cd $REPOS'
 alias hr='cd $GHREPOS'
 alias conf='cd $XDG_CONFIG_HOME'
 
-export PATH=$PATH:$HOME/go/bin
+export PATH=$HOME/go/bin:$PATH
 
 # ~~~~~~~~~~~~~~~ K3s ~~~~~~~~~~~~~~~~~~~~~~~~
 export KUBECONFIG=~/.kube/config
