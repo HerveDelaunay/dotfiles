@@ -33,7 +33,7 @@ export LANG="en_US.UTF-8"
 # directories
 export REPOS="$HOME/repos"
 export GITUSER="HerveDelaunay"
-export GHREPOS="$REPOS/github.com/$GITUSER"
+export GHREPOS="$REPOS/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 export HOMELAB="$GHREPOS/homelab"
 export SECOND_BRAIN="$HOME/second-brain"
