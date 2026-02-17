@@ -21,6 +21,13 @@ export HISTCONTROL=ignorespace
 
 eval "$(starship init bash)"
 
+# ~~~~~~~~~~~~~~~ Mise ~~~~~~~~~~~~~~~~~~~~~~~~
+
+if command -v mise >/dev/null; then
+  MISERUN="$(command -v mise)"
+  eval "$($MISERUN activate bash)"
+fi
+
 # ~~~~~~~~~~~~~~~ Environment Variables ~~~~~~~~~~~~~~~~~~~~~~~~
 
 if command -v nvim >/dev/null; then
@@ -37,13 +44,6 @@ export GHREPOS="$REPOS/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 export HOMELAB="$GHREPOS/homelab"
 export SECOND_BRAIN="$HOME/second-brain"
-
-# ~~~~~~~~~~~~~~~ Mise ~~~~~~~~~~~~~~~~~~~~~~~~
-
-if command -v mise >/dev/null; then
-  MISERUN="$(command -v mise)"
-  eval "$($MISERUN activate bash)"
-fi
 
 # ~~~~~~~~~~~~~~~ Completion ~~~~~~~~~~~~~~~~~~~~~~~~
 
