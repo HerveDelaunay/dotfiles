@@ -1,19 +1,28 @@
 return {
-	-- add gruvbox
-	-- { "wittyjudge/gruvbox-material.nvim" },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		lazy = true,
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		name = "kanagawa",
+		lazy = false,
+		priority = 1000,
+	},
 	{
 		"f4z3r/gruvbox-material.nvim",
 		name = "gruvbox-material",
-		lazy = false,
-		priority = 1000,
-		opts = { contrast = "medium" },
+		lazy = true,
+		opts = {
+			contrast = "medium",
+		},
 	},
-	{ "ellisonleao/gruvbox.nvim" },
-	-- Configure LazyVim to load gruvbox
+	-- Configure LazyVim to load kanagawa-wave
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "gruvbox-material",
+			colorscheme = "kanagawa-wave",
 		},
 	},
 }
