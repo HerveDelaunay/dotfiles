@@ -9,3 +9,5 @@ neovim = "latest"
 lazygit = "latest"
 node = "latest"    # required for lazyvim
 usage = "latest"   # required for mise completion
+k9s = "latest"
+helm = "latest"
