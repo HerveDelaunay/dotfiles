@@ -38,7 +38,7 @@ fi
 export LANG="en_US.UTF-8"
 
 # directories
-export REPOS="$HOME/repos"
+export REPOS="$HOME/Repos"
 export GITUSER="HerveDelaunay"
 export GHREPOS="$REPOS/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
@@ -106,4 +106,5 @@ alias dot='cd $HOME/.local/share/chezmoi'
 alias repos='cd $REPOS'
 alias hr='cd $GHREPOS'
 alias conf='cd $XDG_CONFIG_HOME'
+alias atos='cd $REPOS/atos'
 
