@@ -43,7 +43,7 @@ export GITUSER="HerveDelaunay"
 export GHREPOS="$REPOS/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 export HOMELAB="$GHREPOS/homelab"
-export SECOND_BRAIN="$HOME/second-brain"
+export SECOND_BRAIN="$GHREPOS/second-brain"
 
 # cUrl
 export http_proxy="192.168.122.1:8118"
@@ -75,9 +75,9 @@ fi
 
 alias v=nvim
 alias vim=nvim
-alias gp="git pull"
+alias gp='git pull'
 alias lg=lazygit
-alias t="tmux"
+alias t='tmux'
 
 # kubectl
 alias k=kubectl
@@ -86,19 +86,19 @@ alias kc='kubectx'
 alias kn='kubens'
 
 if command -v bat >/dev/null; then
-  alias cat="bat"
+  alias cat='bat'
 fi
 
 if command -v lsd >/dev/null; then
-  alias ls="lsd"
-  alias ll="ls -lgh"
+  alias ls='lsd'
+  alias ll='ls -lgh'
   alias la='ls -lathr'
   alias lla='ls -lgha'
   alias lt='ls --tree'
 fi
 
 # cd
-alias blog="cd ~/websites/blog"
+alias blog='cd ~/websites/blog'
 alias cdpblog='cd $SECOND_BRAIN/2-areas/blog/content'
 alias homelab='cd $HOMELAB'
 alias hl='homelab'
@@ -107,4 +107,5 @@ alias repos='cd $REPOS'
 alias hr='cd $GHREPOS'
 alias conf='cd $XDG_CONFIG_HOME'
 alias atos='cd $REPOS/atos'
+alias sb='cd $SECOND_BRAIN'
 
