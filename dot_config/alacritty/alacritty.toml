@@ -1,6 +1,6 @@
 # themes from https://github.com/alacritty/alacritty-theme
 # general.import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
-general.import = ["~/.config/alacritty/themes/themes/kanagawa_wave.toml"]
+import = ["~/.config/alacritty/themes/themes/kanagawa_wave.toml"]
 
 [font]
 size = 13
