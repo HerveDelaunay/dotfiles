@@ -40,7 +40,7 @@ export LANG="en_US.UTF-8"
 # directories
 export REPOS="$HOME/Repos"
 export GITUSER="HerveDelaunay"
-export GHREPOS="$REPOS/$GITUSER"
+export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 export HOMELAB="$GHREPOS/homelab"
 export SECOND_BRAIN="$GHREPOS/second-brain"
@@ -110,7 +110,7 @@ alias dot='cd $HOME/.local/share/chezmoi'
 alias repos='cd $REPOS'
 alias hr='cd $GHREPOS'
 alias conf='cd $XDG_CONFIG_HOME'
-alias atos='cd $REPOS/atos'
+alias atos='cd $REPOS/gitlab.com/atos'
 alias sb='cd $SECOND_BRAIN'
 
 
