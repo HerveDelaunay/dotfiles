@@ -82,6 +82,8 @@ alias vim=nvim
 alias gp='git pull'
 alias lg=lazygit
 alias t='tmux'
+alias ds='devpod ssh'
+alias tf='terraform'
 
 # kubectl
 alias k=kubectl
