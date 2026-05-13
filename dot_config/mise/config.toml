@@ -11,3 +11,7 @@ node = "latest"    # required for lazyvim
 usage = "latest"   # required for mise completion
 k9s = "latest"
 helm = "latest"
+gh = "latest"
+kubectl = "latest"
+kubectx = "latest"
+fzf = "latest"
